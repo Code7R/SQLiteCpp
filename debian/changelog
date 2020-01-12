@@ -1,0 +1,5 @@
+libsqlitecpp (2.5.0+git20200112-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Eduard Bloch <blade@debian.org>  Sun, 12 Jan 2020 10:36:09 +0100

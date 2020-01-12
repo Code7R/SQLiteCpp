@@ -1,0 +1,29 @@
+Source: libsqlitecpp
+Priority: optional
+Maintainer: Eduard Bloch <blade@debian.org>
+Build-Depends: debhelper-compat (= 12), cmake, libsqlite3-dev (>= 3.7.15)
+Standards-Version: 4.4.1
+Section: libs
+Homepage: https://srombauts.github.io/SQLiteCpp/
+Vcs-Git: https://github.com/Code7R/SQLiteCpp.git -b debian/sid
+
+Package: libsqlitecpp-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, libsqlite3-dev (>= 3.7.15)
+Description: smart and easy to use C++ SQLite3 wrapper
+ SQLiteC++ offers an encapsulation around the native C APIs of SQLite, with a
+ few intuitive and well documented C++ classes.
+ .
+ The goals of SQLiteC++ are:
+ - to offer the best of the existing simple C++ SQLite wrappers
+ - to be elegantly written with good C++ design, STL, exceptions and RAII idiom
+ - to keep dependencies to a minimum (STL and SQLite3)
+ - to be portable
+ - to be light and fast
+ - to be thread-safe only as much as SQLite “Multi-thread” mode (see below)
+ - to have a good unit test coverage
+ - to use API names sticking with those of the SQLite library
+ - to be well documented with Doxygen tags, and with some good examples
+ - to be well maintained
