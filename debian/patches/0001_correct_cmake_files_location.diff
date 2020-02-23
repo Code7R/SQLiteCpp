@@ -1,0 +1,19 @@
+commit 9ef6dd53915d8fd336e1d8f28a599a33c6ff521a
+Author: Craig Tyler <43353094+tcraigtyler@users.noreply.github.com>
+Date:   Mon Feb 10 17:03:38 2020 -0800
+
+    Install cmake files into same directory
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9363c0d..9f45c87 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -274,7 +274,7 @@ configure_package_config_file(
+ install(FILES
+     ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.cmake
+     ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}ConfigVersion.cmake
+-    DESTINATION lib/cmake/${PROJECT_NAME})
++    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
+ 
+ # Optional additional targets:
+ 
