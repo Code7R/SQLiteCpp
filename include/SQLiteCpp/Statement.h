@@ -11,6 +11,7 @@
 #pragma once
 
 #include <SQLiteCpp/Exception.h>
+#include <SQLiteCpp/Utils.h> // SQLITECPP_PURE_FUNC
 
 #include <string>
 #include <map>
@@ -121,6 +122,7 @@ public:
     // instead of being copied.
     // => if you know what you are doing, use bindNoCopy() instead of bind()
 
+    SQLITECPP_PURE_FUNC
     int getIndex(const char * const apName);
 
     /**

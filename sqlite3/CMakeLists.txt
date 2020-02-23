@@ -1,6 +1,6 @@
 # CMake file for compiling the sqlite3 static library under Windows (for ease of use)
 #
-# Copyright (c) 2012-2016 Sebastien Rombauts (sebastien.rombauts@gmail.com)
+# Copyright (c) 2012-2020 Sebastien Rombauts (sebastien.rombauts@gmail.com)
 #
 # Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
 # or copy at http://opensource.org/licenses/MIT) 
@@ -10,6 +10,10 @@ add_library(sqlite3
  sqlite3.c
  sqlite3.h
 )
+
+target_include_directories(sqlite3
+  PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  PUBLIC $<INSTALL_INTERFACE:include/>)
 
 if (SQLITE_ENABLE_COLUMN_METADATA)
     # Enable the use of SQLite column metadata method
@@ -29,3 +33,13 @@ if (UNIX AND CMAKE_COMPILER_IS_GNUCXX)
         target_compile_options(sqlite3 PRIVATE "-Wno-cast-function-type")
     endif()
 endif()
+
+# Allow the library to be installed via "make install" and found with "find_package"
+
+include(GNUInstallDirs)
+install(TARGETS sqlite3
+    EXPORT ${PROJECT_NAME}Targets
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    COMPONENT libraries)
+install(FILES sqlite3.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT headers)
