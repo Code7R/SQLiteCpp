@@ -17,13 +17,13 @@ Description: smart and easy to use C++ SQLite3 wrapper
  few intuitive and well documented C++ classes.
  .
  The goals of SQLiteC++ are:
- - to offer the best of the existing simple C++ SQLite wrappers
- - to be elegantly written with good C++ design, STL, exceptions and RAII idiom
- - to keep dependencies to a minimum (STL and SQLite3)
- - to be portable
- - to be light and fast
- - to be thread-safe only as much as SQLite “Multi-thread” mode (see below)
- - to have a good unit test coverage
- - to use API names sticking with those of the SQLite library
- - to be well documented with Doxygen tags, and with some good examples
- - to be well maintained
+  - to offer the best of the existing simple C++ SQLite wrappers
+  - to be elegantly written with good C++ design, STL, exceptions and RAII idiom
+  - to keep dependencies to a minimum (STL and SQLite3)
+  - to be portable
+  - to be light and fast
+  - to be thread-safe only as much as SQLite “Multi-thread” mode (see below)
+  - to have a good unit test coverage
+  - to use API names sticking with those of the SQLite library
+  - to be well documented with Doxygen tags, and with some good examples
+  - to be well maintained
